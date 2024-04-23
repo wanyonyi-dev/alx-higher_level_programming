@@ -1,4 +1,3 @@
-
 #!/usr/bin/node
 let x, y;
 const Leng = process.argv;
@@ -16,4 +15,3 @@ function add (x, y) {
   const sum = x + y;
   console.log(sum);
 }
-

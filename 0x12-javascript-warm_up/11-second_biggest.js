@@ -1,4 +1,3 @@
-
 #!/usr/bin/node
 const Num = process.argv;
 const array = [0];
@@ -16,4 +15,3 @@ if (array.length > 1) {
 } else {
   console.log(0);
 }
-

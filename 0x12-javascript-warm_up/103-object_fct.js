@@ -1,6 +1,15 @@
 #!/usr/bin/node
-
-exports.add = function add (x, y) {
-  const sum = x + y;
-  return (sum);
+const myObject = {
+  type: 'object',
+  value: 12
 };
+console.log(myObject);
+myObject.incr = function () {
+  this.value++;
+};
+myObject.incr();
+console.log(myObject);
+myObject.incr();
+console.log(myObject);
+myObject.incr();
+console.log(myObject);

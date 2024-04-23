@@ -1,20 +1,11 @@
-
 #!/usr/bin/node
-
-const Leng = process.argv;
-if (Number(Leng[2])) {
-  const num = Number(Leng[2]);
-  for (let row = 0; row < num; row++) {
-    // defining a row
-    let sqr = '';
-    for (let col = 0; col < num; col++) {
-      // defining a column
-      sqr += 'X';
-    }
-    // printing square
-    console.log(sqr);
-  }
+if (process.argv[2] === undefined || isNaN(process.argv[2])) {
+  console.log('Missing size');
 } else {
-  console.log('Missing number of occurences');
+  const x = Number(process.argv[2]);
+  let i = 0;
+  while (i < x) {
+    console.log('X'.repeat(x));
+    i++;
+  }
 }
-
