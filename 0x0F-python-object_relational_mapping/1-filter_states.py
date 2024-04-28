@@ -1,4 +1,3 @@
-
 #!/usr/bin/python3
 
 import MySQLdb
@@ -31,4 +30,3 @@ def state_id():
 
 
 state_id()
-
