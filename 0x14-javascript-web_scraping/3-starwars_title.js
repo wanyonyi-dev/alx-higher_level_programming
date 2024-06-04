@@ -1,12 +1,23 @@
 #!/usr/bin/node
+/**
+ * This script prints the title of a Star Wars movie where the episode number matches a given integer.
+ * The first argument is the movie ID.
+ * It uses the Star Wars API with the endpoint https://swapi-api.alx-tools.com/api/films/:id.
+ * It uses the module request.
+ */
 
-// Write a script that prints the title of a Star Wars movie where the episode number matches a given integer.
-//
-const axios = require('axios').default;
-const ID = process.argv[2];
-const endPoint = `https://swapi-api.hbtn.io/api/films/${ID}`;
+const request = require('request');
+const args = process.argv.slice(2);
+const movieId = args[0];
+const url = `https://swapi-api.alx-tools.com/api/films/${movieId}`;
 
-axios
-  .get(endPoint)
-  .then((res) => console.log(res.data.title))
-  .catch((err) => console.log(err.message));
+request(url, (error, response, body) => {
+  if (error) {
+    console.error('Error:', error);
+  } else if (response.statusCode !== 200) {
+    console.log('code:', response.statusCode);
+  } else {
+    const data = JSON.parse(body);
+    console.log(data.title);
+  }
+});
