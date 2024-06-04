@@ -7,7 +7,13 @@ const args = process.argv.slice(2);
 
 https
   .get(args[0], (res) => {
-    console.log('code: ' + res.statusCode);
+    if (res.statusCode === 200) {
+      console.log('code: 200');
+    } else if (res.statusCode === 404) {
+      console.log('code: 404');
+    } else {
+      console.log('code: ' + res.statusCode);
+    }
   })
   .on('error', (err) => {
     console.log('Error: ' + err.message);
